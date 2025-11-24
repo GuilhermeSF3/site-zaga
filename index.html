@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZAGA - Defesa Contra a Sujeira</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo-section {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .logo-section img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .intro {
+            background: #f8f9fa;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .intro h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .intro p {
+            max-width: 800px;
+            margin: 0 auto;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .products {
+            padding: 4rem 0;
+            background: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-name {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .product-description {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .product-specs {
+            background: #f8f9fa;
+            padding: 0.8rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .product-specs p {
+            margin: 0.3rem 0;
+            color: #555;
+        }
+
+        .product-specs strong {
+            color: #2c3e50;
+        }
+
+        .product-price {
+            font-size: 2rem;
+            color: #27ae60;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .product-price span {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .buy-button {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .buy-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .buy-button::before {
+            content: '💬';
+            font-size: 1.3rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item span {
+            font-size: 1.5rem;
+        }
+
+        footer {
+            background: #1a252f;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-section">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPCEtLSBTaGllbGQgYmFja2dyb3VuZCAtLT4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ic2hpZWxkR3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMmM0ZTUwO3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM0NTU2Njg7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICAKICA8IS0tIFNoaWVsZCBzaGFwZSAtLT4KICA8cGF0aCBkPSJNIDIwMCAzMCBMIDEyMCA4MCBMIDEyMCAxODAgTCAyMDAgMjcwIEwgMjgwIDE4MCBMIDI4MCA4MCBaIiBmaWxsPSJ1cmwoI3NoaWVsZEdyYWQpIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iNCIvPgogIAogIDwhLS0gQmFnIGRyYXdpbmcgLS0+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjAwLCA1MCkiPgogICAgPCEtLSBCYWcgdG9wIC0tPgogICAgPGVsbGlwc2UgY3g9IjAiIGN5PSIzMCIgcng9IjMwIiByeT0iOCIgZmlsbD0iIzFhMzU0OCIvPgogICAgPCEtLSBCYWcgYm9keSAtLT4KICAgIDxwYXRoIGQ9Ik0gLTMwIDMwIEwgLTM1IDgwIEwgMzUgODAgTCAzMCAzMCBaIiBmaWxsPSIjMmM0ZTUwIi8+CiAgICA8IS0tIFRpZSBsaW5lcyAtLT4KICAgIDxsaW5lIHgxPSItMTUiIHkxPSIyNSIgeDI9Ii0yNSIgeTI9IjEwIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICA8bGluZSB4MT0iMCIgeTE9IjI1IiB4Mj0iMCIgeTI9IjUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICAgIDxsaW5lIHgxPSIxNSIgeTE9IjI1IiB4Mj0iMjUiIHkyPSIxMCIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogICAgPCEtLSBGYW4gdG9wIC0tPgogICAgPHBhdGggZD0iTSAtMjUgMTAgTCAtMzAgLTEwIEwgLTE1IDAgWiIgZmlsbD0iIzJjNGU1MCIvPgogICAgPHBhdGggZD0iTSAtNSAxMCBMIDAgLTE1IEwgNSAwIFoiIGZpbGw9IiMyYzRlNTAiLz4KICAgIDxwYXRoIGQ9Ik0gMTUgMTAgTCAzMCAtMTAgTCAxNSAwIFoiIGZpbGw9IiMyYzRlNTAiLz4KICA8L2c+CiAgCiAgPCEtLSBMZXR0ZXIgWiAtLT4KICA8dGV4dCB4PSIyMDAiIHk9IjE4MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEwMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlo8L3RleHQ+Cjwvc3ZnPg==" alt="ZAGA Logo">
+            </div>
+            <div class="hero">
+                <h1>ZAGA</h1>
+                <p>Defesa Contra a Sujeira</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="intro">
+        <div class="container">
+            <h2>Soluções Completas em Sacos de Lixo</h2>
+            <p>Oferecemos uma linha completa de sacos de lixo de alta qualidade para atender todas as suas necessidades. Produtos resistentes, confiáveis e com o melhor custo-benefício do mercado.</p>
+        </div>
+    </section>
+
+    <section class="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Produtos</h2>
+                <p>Escolha o produto ideal e compre direto pelo WhatsApp</p>
+            </div>
+
+            <div class="product-grid">
+                <!-- Produto 1 -->
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        🗑️
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Saco de Lixo Doméstico 30L</h3>
+                        <p class="product-description">Perfeito para uso diário na cozinha e banheiro. Material resistente que não rasga facilmente.</p>
+                        <div class="product-specs">
+                            <p><strong>Capacidade:</strong> 30 Litros</p>
+                            <p><strong>Cor:</strong> Preto</p>
+                            <p><strong>Pacote:</strong> 50 unidades</p>
+                        </div>
+                        <div class="product-price">
+                            R$ 15,90 <span>/pacote</span>
+                        </div>
+                        <a href="https://wa.me/5511944955616?text=Olá! Gostaria de comprar o Saco de Lixo Doméstico 30L" class="buy-button" target="_blank">
+                            Comprar pelo WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        🛍️
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Saco de Lixo Doméstico 50L</h3>
+                        <p class="product-description">Ideal para lixeiras maiores e áreas de serviço. Extra resistente para resíduos pesados.</p>
+                        <div class="product-specs">
+                            <p><strong>Capacidade:</strong> 50 Litros</p>
+                            <p><strong>Cor:</strong> Preto</p>
+                            <p><strong>Pacote:</strong> 50 unidades</p>
+                        </div>
+                        <div class="product-price">
+                            R$ 24,90 <span>/pacote</span>
+                        </div>
+                        <a href="https://wa.me/5511999999999?text=Olá! Gostaria de comprar o Saco de Lixo Doméstico 50L" class="buy-button" target="_blank">
+                            Comprar pelo WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        🏢
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Saco de Lixo Comercial 100L</h3>
+                        <p class="product-description">Resistência extra para estabelecimentos comerciais e escritórios.</p>
+                        <div class="product-specs">
+                            <p><strong>Capacidade:</strong> 100 Litros</p>
+                            <p><strong>Cor:</strong> Preto</p>
+                            <p><strong>Pacote:</strong> 100 unidades</p>
+                        </div>
+                        <div class="product-price">
+                            R$ 45,90 <span>/pacote</span>
+                        </div>
+                        <a href="https://wa.me/5511999999999?text=Olá! Gostaria de comprar o Saco de Lixo Comercial 100L" class="buy-button" target="_blank">
+                            Comprar pelo WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Produto 4 -->
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        ♻️
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Saco Reciclável 50L - Verde</h3>
+                        <p class="product-description">Para coleta seletiva de vidros. Contribua com o meio ambiente.</p>
+                        <div class="product-specs">
+                            <p><strong>Capacidade:</strong> 50 Litros</p>
+                            <p><strong>Cor:</strong> Verde</p>
+                            <p><strong>Pacote:</strong> 50 unidades</p>
+                        </div>
+                        <div class="product-price">
+                            R$ 22,90 <span>/pacote</span>
+                        </div>
+                        <a href="https://wa.me/5511999999999?text=Olá! Gostaria de comprar o Saco Reciclável 50L Verde" class="buy-button" target="_blank">
+                            Comprar pelo WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Produto 5 -->
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        🏭
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Saco Industrial 200L</h3>
+                        <p class="product-description">Ultra resistente para grandes volumes e resíduos pesados. Ideal para indústrias.</p>
+                        <div class="product-specs">
+                            <p><strong>Capacidade:</strong> 200 Litros</p>
+                            <p><strong>Cor:</strong> Preto</p>
+                            <p><strong>Pacote:</strong> 100 unidades</p>
+                        </div>
+                        <div class="product-price">
+                            R$ 89,90 <span>/pacote</span>
+                        </div>
+                        <a href="https://wa.me/5511999999999?text=Olá! Gostaria de comprar o Saco Industrial 200L" class="buy-button" target="_blank">
+                            Comprar pelo WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Produto 6 -->
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                        🏥
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Saco Hospitalar Branco 100L</h3>
+                        <p class="product-description">Conforme normas ABNT/ANVISA para resíduos de saúde não infectantes.</p>
+                        <div class="product-specs">
+                            <p><strong>Capacidade:</strong> 100 Litros</p>
+                            <p><strong>Cor:</strong> Branco</p>
+                            <p><strong>Pacote:</strong> 100 unidades</p>
+                        </div>
+                        <div class="product-price">
+                            R$ 65,90 <span>/pacote</span>
+                        </div>
+                        <a href="https://wa.me/5511999999999?text=Olá! Gostaria de comprar o Saco Hospitalar Branco 100L" class="buy-button" target="_blank">
+                            Comprar pelo WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Precisa de Grande Quantidade?</h2>
+            <p>Entre em contato para orçamentos personalizados e condições especiais</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📱</span>
+                    <div>(11) 99999-9999</div>
+                </div>
+                <div class="contact-item">
+                    <span>📧</span>
+                    <div>contato@zaga.com.br</div>
+                </div>
+                <div class="contact-item">
+                    <span>💬</span>
+                    <div>Atendimento: Seg a Sex, 8h às 18h</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ZAGA - Defesa Contra a Sujeira. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
