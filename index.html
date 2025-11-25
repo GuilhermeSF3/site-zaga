@@ -15,13 +15,14 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
+            background: #f5f5f5;
         }
 
         header {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            background: #000;
             color: white;
             padding: 2rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
         .container {
@@ -30,53 +31,47 @@
             padding: 0 20px;
         }
 
-        .logo-section {
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        .logo-section img {
-            max-width: 200px;
-            height: auto;
-        }
-
         .hero {
             text-align: center;
-            padding: 1rem 0;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 0.5rem;
+            font-weight: 900;
+            letter-spacing: 3px;
         }
 
         .hero p {
             font-size: 1.2rem;
             opacity: 0.9;
+            letter-spacing: 1px;
         }
 
         .intro {
-            background: #f8f9fa;
+            background: #fff;
             padding: 3rem 0;
             text-align: center;
+            border-bottom: 3px solid #000;
         }
 
         .intro h2 {
-            color: #2c3e50;
+            color: #000;
             margin-bottom: 1rem;
             font-size: 2rem;
+            font-weight: 700;
         }
 
         .intro p {
             max-width: 800px;
             margin: 0 auto;
-            color: #555;
+            color: #666;
             font-size: 1.1rem;
         }
 
         .products {
             padding: 4rem 0;
-            background: #fff;
+            background: #f5f5f5;
         }
 
         .section-title {
@@ -85,157 +80,162 @@
         }
 
         .section-title h2 {
-            font-size: 2.2rem;
-            color: #2c3e50;
+            font-size: 2.5rem;
+            color: #000;
             margin-bottom: 0.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
         }
 
         .section-title p {
             color: #666;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
             margin-top: 2rem;
         }
 
         .product-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 0;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
+            border: 2px solid #000;
         }
 
         .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        .product-image {
+        .product-image-container {
             width: 100%;
-            height: 100%;
-          background-image: url(./lixo20l.png);
-          background-size: cover;
-          background-repeat: no-repeat;
-        
+            height: 300px;
+            background: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 8rem;
-            position: relative;
+            border-bottom: 2px solid #000;
             overflow: hidden;
+            padding: 20px;
         }
 
-        .product-image::before {
-            content: '';
-            position: absolute;
-            width: 150%;
-            height: 150%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: pulse 3s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.1); opacity: 0.8; }
+        .product-image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
 
         .product-info {
-            padding: 1.5rem;
+            padding: 2rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
 
         .product-name {
-            font-size: 1.5rem;
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
+            font-size: 1.6rem;
+            color: #000;
+            margin-bottom: 1rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 3px solid #000;
+            padding-bottom: 0.5rem;
         }
 
         .product-description {
             color: #666;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            flex-grow: 1;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
         .product-specs {
-            background: #f8f9fa;
-            padding: 0.8rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
+            background: #f9f9f9;
+            padding: 1rem;
+            border-left: 4px solid #000;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
         }
 
         .product-specs p {
-            margin: 0.3rem 0;
-            color: #555;
+            margin: 0.5rem 0;
+            color: #333;
+            display: flex;
+            justify-content: space-between;
         }
 
         .product-specs strong {
-            color: #2c3e50;
+            color: #000;
+            font-weight: 700;
         }
 
         .product-price {
-            font-size: 2rem;
-            color: #27ae60;
-            font-weight: bold;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            color: #000;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
             text-align: center;
+            padding: 1rem;
+            background: #f0f0f0;
+            border: 2px solid #000;
         }
 
         .product-price span {
             font-size: 1rem;
             color: #666;
+            font-weight: 400;
         }
 
         .buy-button {
-            background: linear-gradient(135deg, #000000 0%, #000000 100%);
+            background: #000;
             color: white;
             border: none;
-            padding: 0.6rem 1rem;
+            padding: 1.2rem 2rem;
             font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 15px;
+            font-weight: 900;
+            border-radius: 0;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-         
+            gap: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .buy-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            background: #25D366;
+            transform: scale(1.02);
         }
 
         .buy-button::before {
-            content: '💬';
-            font-size: 1.3rem;
+            content: '📱';
+            font-size: 1.5rem;
         }
 
         .cta-section {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            background: #000;
             color: white;
             padding: 4rem 0;
             text-align: center;
         }
 
         .cta-section h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
+            font-weight: 900;
+            letter-spacing: 2px;
         }
 
         .cta-section p {
@@ -254,16 +254,21 @@
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 1.1rem;
+            gap: 0.8rem;
+            font-size: 1.2rem;
+            background: #fff;
+            color: #000;
+            padding: 1rem 2rem;
+            border-radius: 0;
+            font-weight: 700;
         }
 
         .contact-item span {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
         }
 
         footer {
-            background: #1a252f;
+            background: #1a1a1a;
             color: white;
             text-align: center;
             padding: 2rem 0;
@@ -282,165 +287,184 @@
                 flex-direction: column;
                 gap: 1rem;
             }
+
+            .product-name {
+                font-size: 1.3rem;
+            }
+
+            .product-price {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .product-info {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <div class="logo-section">
-            
-            </div>
             <div class="hero">
                 <h1>ZAGA</h1>
-                <p>Defesa Contra a Sujeira</p>
+                <p>DEFESA CONTRA A SUJEIRA</p>
             </div>
         </div>
     </header>
 
     <section class="intro">
         <div class="container">
-            <h2>Soluções Completas em Sacos de Lixo</h2>
-            <p>Oferecemos uma linha completa de sacos de lixo de alta qualidade para atender todas as suas necessidades. Produtos resistentes, confiáveis e com o melhor custo-benefício do mercado.</p>
+            <h2>CATÁLOGO DE PRODUTOS</h2>
+            <p>Sacos de lixo de alta qualidade com os melhores preços do mercado. Produtos resistentes e confiáveis para uso doméstico, comercial e industrial.</p>
         </div>
     </section>
 
     <section class="products">
         <div class="container">
             <div class="section-title">
-                <h2>Nossos Produtos</h2>
-                <p>Escolha o produto ideal e compre direto pelo WhatsApp</p>
+                <h2>PRODUTOS EM DESTAQUE</h2>
+                <p>Clique no botão para fazer seu pedido via WhatsApp</p>
             </div>
 
             <div class="product-grid">
                 <!-- Produto 1 -->
                 <div class="product-card">
-                    <div class="product-image">
-                      
+                    <div class="product-image-container">
+                        <img src="./lixo20L.png" alt="Saco de Lixo 20L">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Saco de Lixo 20L</h3>
-                        <p class="product-description">Perfeito para uso diário na cozinha e banheiro. Material resistente que não rasga facilmente.</p>
+                        <p class="product-description">Ideal para uso diário em cozinhas e banheiros. Material resistente e de alta qualidade que não rasga facilmente.</p>
                         <div class="product-specs">
-                            <p><strong>Capacidade:</strong> 20 Litros</p>
-                            <p><strong>Cor:</strong> Branco</p>
-                            <p><strong>Pacote:</strong> 100 unidades</p>
+                            <p><strong>Capacidade:</strong> <span>20 Litros</span></p>
+                            <p><strong>Cor:</strong> <span>Branco</span></p>
+                            <p><strong>Pacote:</strong> <span>100 unidades</span></p>
                         </div>
                         <div class="product-price">
                             R$ 40,00 <span>/pacote</span>
                         </div>
-                        <a href="https://wa.me/5511944955616?text=Olá! Gostaria de comprar o Saco de Lixo de 20L" class="buy-button" target="_blank">
-                            Comprar pelo WhatsApp
+                        <a href="https://wa.me/5511944955616?text=Olá! Gostaria de comprar o Saco de Lixo 20L - R$ 40,00" class="buy-button" target="_blank">
+                            Comprar Agora
                         </a>
                     </div>
                 </div>
 
                 <!-- Produto 2 -->
                 <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                        🛍️
+                    <div class="product-image-container">
+                        <img src="./LIXO30L.png" alt="Saco de Lixo 40L">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Saco de Lixo Doméstico 50L</h3>
-                        <p class="product-description">Ideal para lixeiras maiores e áreas de serviço. Extra resistente para resíduos pesados.</p>
+                        <h3 class="product-name">Saco de Lixo 40L</h3>
+                        <p class="product-description">Perfeito para lixeiras maiores e áreas de serviço. Extra resistente para resíduos mais pesados do dia a dia.</p>
                         <div class="product-specs">
-                            <p><strong>Capacidade:</strong> 50 Litros</p>
-                            <p><strong>Cor:</strong> Preto</p>
-                            <p><strong>Pacote:</strong> 50 unidades</p>
+                            <p><strong>Capacidade:</strong> <span>40 Litros</span></p>
+                            <p><strong>Cor:</strong> <span>Branco</span></p>
+                            <p><strong>Pacote:</strong> <span>50 unidades</span></p>
                         </div>
                         <div class="product-price">
-                            R$ 24,90 <span>/pacote</span>
+                            R$ 30,00 <span>/pacote</span>
                         </div>
-                        <a href="https://wa.me/5511999999999?text=Olá! Gostaria de comprar o Saco de Lixo Doméstico 50L" class="buy-button" target="_blank">
-                            Comprar pelo WhatsApp
+                        <a href="https://wa.me/5511944955616?text=Olá! Gostaria de comprar o Saco de Lixo 40L - R$ 30,00" class="buy-button" target="_blank">
+                            Comprar Agora
                         </a>
                     </div>
                 </div>
 
                 <!-- Produto 3 -->
                 <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                        🏢
+                    <div class="product-image-container">
+                        <img src="./LIXO60L.png" alt="Saco de Lixo 60L Reforçado">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Saco de Lixo Comercial 100L</h3>
-                        <p class="product-description">Resistência extra para estabelecimentos comerciais e escritórios.</p>
+                        <h3 class="product-name">Saco de Lixo 60L Reforçado</h3>
+                        <p class="product-description">Resistência extra para estabelecimentos comerciais, escritórios e uso doméstico intenso. Material reforçado.</p>
                         <div class="product-specs">
-                            <p><strong>Capacidade:</strong> 100 Litros</p>
-                            <p><strong>Cor:</strong> Preto</p>
-                            <p><strong>Pacote:</strong> 100 unidades</p>
+                            <p><strong>Capacidade:</strong> <span>60 Litros</span></p>
+                            <p><strong>Cor:</strong> <span>Preto</span></p>
+                            <p><strong>Pacote:</strong> <span>100 unidades</span></p>
                         </div>
                         <div class="product-price">
-                            R$ 45,90 <span>/pacote</span>
+                            R$ 100,00 <span>/pacote</span>
                         </div>
-                        <a href="https://wa.me/5511999999999?text=Olá! Gostaria de comprar o Saco de Lixo Comercial 100L" class="buy-button" target="_blank">
-                            Comprar pelo WhatsApp
+                        <a href="https://wa.me/5511944955616?text=Olá! Gostaria de comprar o Saco de Lixo 60L Reforçado - R$ 100,00" class="buy-button" target="_blank">
+                            Comprar Agora
                         </a>
                     </div>
                 </div>
 
                 <!-- Produto 4 -->
                 <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
-                        ♻️
+                    <div class="product-image-container">
+                        <img src="./LIXO60L.png" alt="Saco de Lixo 100L Intermediário" style="filter: brightness(0.9);">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Saco Reciclável 50L - Verde</h3>
-                        <p class="product-description">Para coleta seletiva de vidros. Contribua com o meio ambiente.</p>
+                        <h3 class="product-name">Saco de Lixo 100L Intermediário</h3>
+                        <p class="product-description">Ótima opção para grandes volumes de lixo. Resistência intermediária ideal para uso comercial moderado.</p>
                         <div class="product-specs">
-                            <p><strong>Capacidade:</strong> 50 Litros</p>
-                            <p><strong>Cor:</strong> Verde</p>
-                            <p><strong>Pacote:</strong> 50 unidades</p>
+                            <p><strong>Capacidade:</strong> <span>100 Litros</span></p>
+                            <p><strong>Cor:</strong> <span>Preto</span></p>
+                            <p><strong>Pacote:</strong> <span>50 unidades</span></p>
                         </div>
                         <div class="product-price">
-                            R$ 22,90 <span>/pacote</span>
+                            R$ 70,00 <span>/pacote</span>
                         </div>
-                        <a href="https://wa.me/5511999999999?text=Olá! Gostaria de comprar o Saco Reciclável 50L Verde" class="buy-button" target="_blank">
-                            Comprar pelo WhatsApp
+                        <a href="https://wa.me/5511944955616?text=Olá! Gostaria de comprar o Saco de Lixo 100L Intermediário - R$ 70,00" class="buy-button" target="_blank">
+                            Comprar Agora
                         </a>
                     </div>
                 </div>
 
                 <!-- Produto 5 -->
                 <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-                        🏭
+                    <div class="product-image-container">
+                        <img src="./LIXO60L.png" alt="Saco de Lixo 100L Reforçado" style="filter: brightness(0.8);">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Saco Industrial 200L</h3>
-                        <p class="product-description">Ultra resistente para grandes volumes e resíduos pesados. Ideal para indústrias.</p>
+                        <h3 class="product-name">Saco de Lixo 100L Reforçado</h3>
+                        <p class="product-description">Ultra resistente para grandes volumes e resíduos pesados. Ideal para indústrias, condomínios e comércio.</p>
                         <div class="product-specs">
-                            <p><strong>Capacidade:</strong> 200 Litros</p>
-                            <p><strong>Cor:</strong> Preto</p>
-                            <p><strong>Pacote:</strong> 100 unidades</p>
+                            <p><strong>Capacidade:</strong> <span>100 Litros</span></p>
+                            <p><strong>Cor:</strong> <span>Preto</span></p>
+                            <p><strong>Pacote:</strong> <span>5kg (53 unid.)</span></p>
                         </div>
                         <div class="product-price">
-                            R$ 89,90 <span>/pacote</span>
+                            R$ 120,00 <span>/pacote</span>
                         </div>
-                        <a href="https://wa.me/5511999999999?text=Olá! Gostaria de comprar o Saco Industrial 200L" class="buy-button" target="_blank">
-                            Comprar pelo WhatsApp
+                        <a href="https://wa.me/5511944955616?text=Olá! Gostaria de comprar o Saco de Lixo 100L Reforçado - R$ 120,00" class="buy-button" target="_blank">
+                            Comprar Agora
                         </a>
                     </div>
                 </div>
 
                 <!-- Produto 6 -->
                 <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
-                        🏥
+                    <div class="product-image-container">
+                        <img src="./LIXO60L.png" alt="Saco de Lixo 200L" style="filter: brightness(0.7);">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Saco Hospitalar Branco 100L</h3>
-                        <p class="product-description">Conforme normas ABNT/ANVISA para resíduos de saúde não infectantes.</p>
+                        <h3 class="product-name">Saco de Lixo 200L</h3>
+                        <p class="product-description">Máxima capacidade para grandes volumes. Perfeito para condomínios, indústrias e estabelecimentos comerciais.</p>
                         <div class="product-specs">
-                            <p><strong>Capacidade:</strong> 100 Litros</p>
-                            <p><strong>Cor:</strong> Branco</p>
-                            <p><strong>Pacote:</strong> 100 unidades</p>
+                            <p><strong>Capacidade:</strong> <span>200 Litros</span></p>
+                            <p><strong>Cor:</strong> <span>Preto</span></p>
+                            <p><strong>Pacote:</strong> <span>5kg (45 unid.)</span></p>
                         </div>
                         <div class="product-price">
-                            R$ 65,90 <span>/pacote</span>
+                            R$ 130,00 <span>/pacote</span>
                         </div>
-                        <a href="https://wa.me/5511999999999?text=Olá! Gostaria de comprar o Saco Hospitalar Branco 100L" class="buy-button" target="_blank">
-                            Comprar pelo WhatsApp
+                        <a href="https://wa.me/5511944955616?text=Olá! Gostaria de comprar o Saco de Lixo 200L - R$ 130,00" class="buy-button" target="_blank">
+                            Comprar Agora
                         </a>
                     </div>
                 </div>
@@ -450,20 +474,16 @@
 
     <section class="cta-section">
         <div class="container">
-            <h2>Precisa de Grande Quantidade?</h2>
-            <p>Entre em contato para orçamentos personalizados e condições especiais</p>
+            <h2>COMPRAS EM GRANDE QUANTIDADE?</h2>
+            <p>Entre em contato para orçamentos personalizados e condições especiais para seu negócio</p>
             <div class="contact-info">
                 <div class="contact-item">
                     <span>📱</span>
-                    <div>(11) 99999-9999</div>
+                    <div>(11) 94495-5616</div>
                 </div>
                 <div class="contact-item">
-                    <span>📧</span>
-                    <div>contato@zaga.com.br</div>
-                </div>
-                <div class="contact-item">
-                    <span>💬</span>
-                    <div>Atendimento: Seg a Sex, 8h às 18h</div>
+                    <span>🕒</span>
+                    <div>Seg a Sex: 8h às 17h</div>
                 </div>
             </div>
         </div>
@@ -471,7 +491,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 ZAGA - Defesa Contra a Sujeira. Todos os direitos reservados.</p>
+            <p>&copy; 2024 ZAGA - DEFESA CONTRA A SUJEIRA | Todos os direitos reservados</p>
         </div>
     </footer>
 </body>
